@@ -17,7 +17,7 @@ import java.util.UUID;
 public class UserService {
 
   @Autowired
-  private static UserRepository userRepository;
+  private  UserRepository userRepository;
 
   public Page<User> getUsers(int pageNumber, int size, String orderBy) {
     if (size > 100) size = 100;
@@ -25,7 +25,7 @@ public class UserService {
     return userRepository.findAll(pageable);
   }
 
-  public static User findByEmail(String email) {
+  public  User findByEmail(String email) {
     return userRepository.findByEmail(email).orElseThrow(() -> new NotFoundException("Email " + email + " non trovata"));
   }
 

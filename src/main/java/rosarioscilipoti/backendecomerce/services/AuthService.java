@@ -26,7 +26,7 @@ public class AuthService {
     private JWTTools jwtTools;
 
     public String GenerateToken(UserLoginDTO payload) {
-        User user = UserService.findByEmail(payload.email());
+        User user = usersService.findByEmail(payload.email());
         if (bcrypt.matches(payload.password(), user.getPassword())) {
             return jwtTools.createToken(user);
         } else {

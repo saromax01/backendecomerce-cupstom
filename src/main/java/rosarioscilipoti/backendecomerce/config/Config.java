@@ -29,7 +29,7 @@ public class Config {
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .cors(Customizer.withDefaults())
             .authorizeHttpRequests(auth -> auth
-                    .requestMatchers("/api/auth/**").permitAll()
+                    .requestMatchers("/**").permitAll()
                     .anyRequest().authenticated())
             .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
 
