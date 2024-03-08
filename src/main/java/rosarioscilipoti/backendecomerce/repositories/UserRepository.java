@@ -2,6 +2,7 @@ package rosarioscilipoti.backendecomerce.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import rosarioscilipoti.backendecomerce.DTO.UserLoginDTO;
 import rosarioscilipoti.backendecomerce.entites.User;
 
 import java.util.Optional;
